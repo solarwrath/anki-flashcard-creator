@@ -5,13 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ae92456-0be2-47b9-ad0e-04d2fc34d215" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/anki-flashcard-creator-test.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/card_composers/composer_base.py" beforeDir="false" afterPath="$PROJECT_DIR$/card_composers/composer_base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/card_composers/composer_noun.py" beforeDir="false" afterPath="$PROJECT_DIR$/card_composers/composer_noun.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/ConfiguredPydanticBaseModel.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/enums/word_category.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/enums/word_category.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/responses/response_base.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/responses/response_base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/responses/response_noun.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/responses/response_verb.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/responses/response_verb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website_parsers/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/website_parsers/larousse_parser.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/website_parsers/linguee_parser.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/website_parsers/website_parser_base.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +66,7 @@
       <recent name="D:\studies\python\anki-flashcard-creator-test\model\responses" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\studies\python\anki-flashcard-creator-test\model\variants" />
       <recent name="D:\studies\python\anki-flashcard-creator-test" />
       <recent name="D:\studies\python\anki-flashcard-creator-test\model" />
     </key>
@@ -109,7 +116,8 @@
       <workItem from="1741553276597" duration="3007000" />
       <workItem from="1741658763843" duration="759000" />
       <workItem from="1741743211226" duration="3806000" />
-      <workItem from="1742139871180" duration="3614000" />
+      <workItem from="1742139871180" duration="6457000" />
+      <workItem from="1742668466945" duration="7289000" />
     </task>
     <servers />
   </component>
@@ -117,6 +125,6 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/anki_flashcard_creator_test$main.coverage" NAME="main Coverage Results" MODIFIED="1742148608573" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/anki_flashcard_creator_test$main.coverage" NAME="main Coverage Results" MODIFIED="1742676122843" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

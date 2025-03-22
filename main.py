@@ -1,10 +1,16 @@
+import json
 from pprint import pprint
+from typing import List
 
 from card_composers.composer_base import ComposerBase
 from card_composers.composer_noun import ComposerNoun
 from model.enums.word_category import WordCategory
 from model.responses.response_base import Response
+from model.variants.noun_variant import NounVariant
+from model.variants.variant import Variant
+from model.variants.variant_augmenter import NounVariantAugmenter, VariantAugmenter
 from website_parsers.larousse_parser import LarousseParser
+from website_parsers.linguee_parser import LingueeParser
 
 """
 TODO: 
@@ -18,29 +24,46 @@ TODO:
 """
 
 
-def create_anki_card(query: str)->Response:
+def create_anki_card(query: str) -> Response:
     query = query.strip()
 
-    larousse_parser = LarousseParser(query)
-    word_category = larousse_parser.get_word_category()
+    # Create a single response with all variants
+    response = Response()
 
-    composer = create_composer(word_category, query)
+    # Get all variants from Linguee
+    linguee_parser = LingueeParser(query)
+    variants = linguee_parser.get_variants()
 
-    return composer.compose()
+    # Augment each variant with category-specific data
+    for variant in variants:
+        try:
+            augmenter = create_variant_augmenter(variant, linguee_parser)
+            augmenter.augment(variant)
+        except NotImplementedError:
+            # TODO: Support other word categories (verbs, adjectives, etc.)
+            continue
+        except ValueError as e:
+            print(f"Warning: {e}")
+            continue
+    
+    # Add variants to response
+    response.variants.extend(variants)
+
+    return response
 
 
-def create_composer(word_category: WordCategory, query: str)->ComposerBase:
-    match word_category:
+def create_variant_augmenter(variant: Variant, linguee_parser: LingueeParser) -> VariantAugmenter:
+    match variant.category:
         case WordCategory.noun:
-            return ComposerNoun(query)
+            return NounVariantAugmenter(linguee_parser)
         case WordCategory.verb:
-            return ComposerNoun(query)
-
-    raise Exception(f"No composer for such word category: {word_category}")
+            # TODO: Implement VerbVariantAugmenter when ready
+            raise NotImplementedError("Verb variants are not yet supported")
+        case _:
+            raise ValueError(f"No augmenter for such word category: {variant.category}")
 
 
 if __name__ == '__main__':
     response = create_anki_card('livre')
-    serialized_response = response.model_dump_json()
-    pprint(serialized_response)
-    #create_anki_card('manuel')
+    serialized_response = json.dumps(response.to_dict(), indent=2, ensure_ascii=False)
+    print(serialized_response)

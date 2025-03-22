@@ -8,6 +8,6 @@ class VerbResponse(Response):
     group: VerbGroup
     conjugates_with: ConjugatesWith
 
-    def __init__(self, /, **data: any):
-        data["category"] = WordCategory.verb
-        super().__init__(**data)
+    def __init__(self):
+        super().__init__()
+        self.category = WordCategory.verb

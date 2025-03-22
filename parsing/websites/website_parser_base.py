@@ -1,20 +1,14 @@
-from typing import Any
 import abc
 
 import requests
 from bs4 import BeautifulSoup
-from pydantic import BaseModel
 
-from model.ConfiguredPydanticBaseModel import ConfiguredPydanticBaseModel
-
-
-class WebsiteParserBase(ConfiguredPydanticBaseModel, metaclass=abc.ABCMeta):
+class WebsiteParserBase(metaclass=abc.ABCMeta):
     query: str | None
     soup: BeautifulSoup | None
 
 
     def __init__(self, query):
-        super().__init__()  # Use parent __init__
         self.query = query
         self.soup = self.query_dictionary()
 

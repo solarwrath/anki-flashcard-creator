@@ -6,26 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="9ae92456-0be2-47b9-ad0e-04d2fc34d215" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/card_composers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/logic/parsing/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/card_composers/composer_base.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/card_composers/composer_noun.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logic/parsing/websites/linguee_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/logic/parsing/websites/linguee_parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logic/parsing/websites/openipa_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/logic/parsing/websites/openipa_parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logic/parsing/websites/playwright_parser_base.py" beforeDir="false" afterPath="$PROJECT_DIR$/logic/parsing/websites/playwright_parser_base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logic/variant_augmenters/variant_augmenter.py" beforeDir="false" afterPath="$PROJECT_DIR$/logic/variant_augmenters/variant_augmenter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/enums/conjugates_with.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/enums/conjugates_with.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/enums/verb_group.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/enums/verb_group.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/enums/word_category.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/enums/word_category.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/enums/word_gender.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/enums/word_gender.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/responses/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/logic/parsing/websites/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/responses/response_base.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/response.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/responses/response_verb.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/variants/noun_variant.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/variants/noun_variant.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/variants/variant.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/variants/variant.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/variants/variant_augmenter.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/parsing/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/parsing/html_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/logic/parsing/html_parser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parsing/websites/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/parsing/websites/larousse_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/logic/parsing/websites/larousse_parser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parsing/websites/linguee_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/logic/parsing/websites/linguee_parser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parsing/websites/website_parser_base.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/image_search_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/logic/services/image_search_service.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +116,8 @@
       <workItem from="1741658763843" duration="759000" />
       <workItem from="1741743211226" duration="3806000" />
       <workItem from="1742139871180" duration="6457000" />
-      <workItem from="1742668466945" duration="17435000" />
+      <workItem from="1742668466945" duration="25279000" />
+      <workItem from="1742736844989" duration="10280000" />
     </task>
     <servers />
   </component>
@@ -135,6 +125,6 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/anki_flashcard_creator_test$main.coverage" NAME="main Coverage Results" MODIFIED="1742688037979" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/anki_flashcard_creator_test$main.coverage" NAME="main Coverage Results" MODIFIED="1742745343990" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

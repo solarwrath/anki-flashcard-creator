@@ -7,11 +7,12 @@ from model.enums.word_category import WordCategory
 from model.variants.variant import Variant
 from logic.services.image_search_service import ImageSearchService
 from logic.parsing.websites.openipa_parser import OpenIPAParser
+from logic.parsing.websites.forvo_parser import ForvoParser
 
 T = TypeVar('T', bound=Variant)
 
 
-class VariantAugmenter(ABC):
+class VariantAugmenter():
     def __init__(self):
         self.image_service = ImageSearchService()
         self._executor = ThreadPoolExecutor(max_workers=1)
@@ -19,7 +20,7 @@ class VariantAugmenter(ABC):
     @abstractmethod
     def can_augment(self, variant: Variant) -> bool:
         """Check if this augmenter can handle the given variant"""
-        pass
+        return True
 
     def augment(self, variant: Variant) -> None:
         """
@@ -27,17 +28,13 @@ class VariantAugmenter(ABC):
         - Category-specific data (e.g. gender for nouns)
         - Images based on word and definition
         - IPA transcription from OpenIPA
+        - Pronunciations from Forvo
         """
-        # Add category-specific data
+        #self._search_images(variant)
+        #self._add_transcription(variant)
+        #self._add_pronunciations(variant)
         self._add_category_specific_data(variant)
 
-        # Search for images
-        self._search_images(variant)
-
-        # Get IPA transcription
-        self._add_transcription(variant)
-
-    @abstractmethod
     def _add_category_specific_data(self, variant: Variant) -> None:
         """Add category-specific data to the variant"""
         pass
@@ -62,10 +59,29 @@ class VariantAugmenter(ABC):
         except Exception as e:
             print(f"Warning: Failed to add transcription for '{variant.word}': {e}")
 
+    def _add_pronunciations(self, variant: Variant) -> None:
+        """Add pronunciations from Forvo"""
+        try:
+            # Create a new event loop in the thread
+            future = self._executor.submit(
+                lambda: asyncio.run(self._run_async_pronunciations(variant.word))
+            )
+            # Get the result from the future
+            pronunciations = future.result()
+            if pronunciations:
+                variant.pronunciations = pronunciations
+        except Exception as e:
+            print(f"Warning: Failed to add pronunciations for '{variant.word}': {e}")
+
     async def _run_async_transcription(self, word: str) -> str | None:
         """Run the async transcription retrieval in a new event loop"""
         async with OpenIPAParser(word) as parser:
             return await parser.get_transcription()
+
+    async def _run_async_pronunciations(self, word: str) -> list[str]:
+        """Run the async pronunciation retrieval in a new event loop"""
+        async with ForvoParser(word) as parser:
+            return await parser.get_pronunciation()
 
     @staticmethod
     def create(category: WordCategory) -> 'VariantAugmenter':
@@ -75,10 +91,10 @@ class VariantAugmenter(ABC):
                 from logic.variant_augmenters.noun_variant_augmenter import NounVariantAugmenter
                 return NounVariantAugmenter()
             case WordCategory.VERB:
-                # TODO: Implement VerbVariantAugmenter when ready
-                raise NotImplementedError("Verb variants are not yet supported")
+                from logic.variant_augmenters.verb_variant_augmenter import VerbVariantAugmenter
+                return VerbVariantAugmenter()
             case _:
-                raise ValueError(f"No augmenter available for category: {category}")
+                return VariantAugmenter()
 
     def __del__(self):
         """Cleanup thread pool executor"""

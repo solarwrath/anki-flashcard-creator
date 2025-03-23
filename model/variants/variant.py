@@ -6,17 +6,18 @@ from model.enums.word_category import WordCategory
 
 @dataclass
 class Variant:
+    word: str
     category: WordCategory
-    pronunciation: str | None
-    transcription: str | None  # IPA transcription of the word
     images: list[str] | None
     english_definitions: list[str]
+    pronunciations: list[str] | None  # List of pronunciation URLs from Forvo
+    transcription: str | None  # IPA transcription of the word
     examples: list[str]  # List of example sentences
-    word: str
+
     element: Tag | None  # Non-serializable property for the HTML element
 
     def __init__(self):
-        self.pronunciation = None
+        self.pronunciations = []
         self.transcription = None
         self.images = []
         self.english_definitions = []
@@ -27,7 +28,7 @@ class Variant:
     def to_dict(self):
         return {
             'category': self.category.value,
-            'pronunciation': self.pronunciation,
+            'pronunciations': self.pronunciations,
             'transcription': self.transcription,
             'images': self.images,
             'english_definitions': self.english_definitions,

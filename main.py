@@ -42,6 +42,6 @@ def create_anki_card(query: str) -> Response:
 
 
 if __name__ == '__main__':
-    response = create_anki_card('livre')
+    response = create_anki_card('sans')
     serialized_response = json.dumps(response.to_dict(), indent=2, ensure_ascii=False)
     print(serialized_response)

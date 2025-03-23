@@ -1,23 +1,11 @@
 import json
-from pprint import pprint
-from typing import List
 
-from card_composers.composer_base import ComposerBase
-from card_composers.composer_noun import ComposerNoun
-from model.enums.word_category import WordCategory
-from model.responses.response_base import Response
-from model.variants.noun_variant import NounVariant
-from model.variants.variant import Variant
-from model.variants.variant_augmenter import NounVariantAugmenter, VariantAugmenter
-from website_parsers.larousse_parser import LarousseParser
-from website_parsers.linguee_parser import LingueeParser
+from model.response import Response
+from logic.variant_augmenters import create_variant_augmenter
+from logic.parsing.websites.linguee_parser import LingueeParser
 
 """
 TODO: 
-2. Implement getting image.
-3. Implement getting English Meaning.
-4. Implement getting examples.
-5. Implement getting transcription.
 6. Implement getting prononciation.
 7. Implement getting "conjugates with"
 8. Implement getting "conjugates as"
@@ -37,7 +25,8 @@ def create_anki_card(query: str) -> Response:
     # Augment each variant with category-specific data
     for variant in variants:
         try:
-            augmenter = create_variant_augmenter(variant, linguee_parser)
+            augmenter = create_variant_augmenter(variant.category)
+            augmenter.linguee_parser = linguee_parser  # Set the parser after creation
             augmenter.augment(variant)
         except NotImplementedError:
             # TODO: Support other word categories (verbs, adjectives, etc.)
@@ -50,17 +39,6 @@ def create_anki_card(query: str) -> Response:
     response.variants.extend(variants)
 
     return response
-
-
-def create_variant_augmenter(variant: Variant, linguee_parser: LingueeParser) -> VariantAugmenter:
-    match variant.category:
-        case WordCategory.noun:
-            return NounVariantAugmenter(linguee_parser)
-        case WordCategory.verb:
-            # TODO: Implement VerbVariantAugmenter when ready
-            raise NotImplementedError("Verb variants are not yet supported")
-        case _:
-            raise ValueError(f"No augmenter for such word category: {variant.category}")
 
 
 if __name__ == '__main__':

@@ -1,9 +1,6 @@
-from model.enums.word_category import WordCategory
-from website_parsers.html_parser import HtmlParser
-from website_parsers.website_parser_base import WebsiteParserBase
+""""
 
-
-class LarousseParser(WebsiteParserBase):
+class LarousseParser(RequestsParserBase):
     def __init__(self, query: str):
         super().__init__(query)
 
@@ -26,4 +23,5 @@ class LarousseParser(WebsiteParserBase):
                 return WordCategory.noun
 
         raise Exception(f"No such word category: {word_category_string}")
+        """
 

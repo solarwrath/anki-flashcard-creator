@@ -6,18 +6,26 @@
   <component name="ChangeListManager">
     <list default="true" id="9ae92456-0be2-47b9-ad0e-04d2fc34d215" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/card_composers/composer_base.py" beforeDir="false" afterPath="$PROJECT_DIR$/card_composers/composer_base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/card_composers/composer_noun.py" beforeDir="false" afterPath="$PROJECT_DIR$/card_composers/composer_noun.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/card_composers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/logic/parsing/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/card_composers/composer_base.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/card_composers/composer_noun.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/ConfiguredPydanticBaseModel.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/model/enums/word_category.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/enums/word_category.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/responses/response_base.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/responses/response_base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/responses/response_noun.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/responses/response_verb.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/responses/response_verb.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website_parsers/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website_parsers/larousse_parser.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website_parsers/linguee_parser.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website_parsers/website_parser_base.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/enums/word_gender.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/enums/word_gender.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/responses/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/logic/parsing/websites/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/responses/response_base.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/response.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/responses/response_verb.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/variants/noun_variant.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/variants/noun_variant.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/variants/variant.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/variants/variant.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/variants/variant_augmenter.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parsing/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parsing/html_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/logic/parsing/html_parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parsing/websites/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parsing/websites/larousse_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/logic/parsing/websites/larousse_parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parsing/websites/linguee_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/logic/parsing/websites/linguee_parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parsing/websites/website_parser_base.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/image_search_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/logic/services/image_search_service.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,20 +53,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/studies/python/anki-flashcard-creator-test/website_parsers&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/studies/python/anki-flashcard-creator-test/website_parsers",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\studies\python\anki-flashcard-creator-test\website_parsers" />
@@ -66,9 +74,11 @@
       <recent name="D:\studies\python\anki-flashcard-creator-test\model\responses" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\studies\python\anki-flashcard-creator-test\model\variants" />
-      <recent name="D:\studies\python\anki-flashcard-creator-test" />
+      <recent name="D:\studies\python\anki-flashcard-creator-test\logic\parsing" />
       <recent name="D:\studies\python\anki-flashcard-creator-test\model" />
+      <recent name="D:\studies\python\anki-flashcard-creator-test\logic" />
+      <recent name="D:\studies\python\anki-flashcard-creator-test" />
+      <recent name="D:\studies\python\anki-flashcard-creator-test\parsing\websites" />
     </key>
   </component>
   <component name="RunManager">
@@ -117,7 +127,7 @@
       <workItem from="1741658763843" duration="759000" />
       <workItem from="1741743211226" duration="3806000" />
       <workItem from="1742139871180" duration="6457000" />
-      <workItem from="1742668466945" duration="7289000" />
+      <workItem from="1742668466945" duration="17435000" />
     </task>
     <servers />
   </component>
@@ -125,6 +135,6 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/anki_flashcard_creator_test$main.coverage" NAME="main Coverage Results" MODIFIED="1742676122843" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/anki_flashcard_creator_test$main.coverage" NAME="main Coverage Results" MODIFIED="1742688037979" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

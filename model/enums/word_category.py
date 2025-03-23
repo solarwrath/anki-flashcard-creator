@@ -2,7 +2,7 @@ from enum import Enum
 
 
 class WordCategory(str, Enum):
-    noun = 'noun'
-    verb = 'verb'
-    adjective = 'adjectif'
-    conjunction = 'conjunction'
+    NOUN = 'noun'
+    VERB = 'verb'
+    ADJECTIVE = 'adjectif'
+    CONJUNCTION = 'conjunction'
